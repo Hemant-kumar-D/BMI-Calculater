@@ -1,98 +1,109 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:orientation="horizontal"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-   <EditText
-       android:id="@+id/edit_1"
-       android:layout_width="match_parent"
-       android:paddingLeft="10dp"
-       android:layout_height="50dp"
-       android:inputType="number"
-       android:background="@drawable/edit_round"
-       android:layout_marginLeft="20dp"
-       android:layout_marginTop="10dp"
-       android:layout_marginRight="20dp"
-       android:hint="Enter Weight(In-Kg)"
-       android:textColor="@color/black"
-       android:textColorHint="@color/black">
 
-   </EditText>
-   <EditText
-       android:id="@+id/edit_2"
-       android:layout_width="match_parent"
-
-       android:paddingLeft="10dp"
-       android:background="@drawable/edit_round"
-       android:layout_height="50dp"
-       android:layout_marginLeft="20dp"
-       android:paddingTop="10dp"
-       android:layout_marginTop="20dp"
-       android:textColor="@color/black"
-
-       android:inputType="number"
-       android:layout_below="@+id/edit_1"
-       android:layout_marginRight="20dp"
-       android:hint="Enter Hight(In-cm)"
-       android:textColorHint="@color/black">
-
-   </EditText>
-
-   <Button
-       android:id="@+id/btn_1"
-       android:layout_width="wrap_content"
+   <com.google.android.material.textfield.TextInputLayout
+       android:id="@+id/height_layout"
+       style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+       android:layout_width="185dp"
        android:layout_height="wrap_content"
-       android:layout_below="@id/edit_2"
        android:layout_marginTop="20dp"
-       android:layout_centerHorizontal="true"
-       android:background="@drawable/btn_shap"
+       android:gravity="center"
+       app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.MyApp.TextInputLayout.Rounded">
 
+      <com.google.android.material.textfield.TextInputEditText
+          android:id="@+id/edit_1"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_margin="5dp"
+          android:hint="Weight in Kg"
+          android:inputType="numberDecimal"
+          android:textStyle="bold"
+          android:maxLines="1" />
+   </com.google.android.material.textfield.TextInputLayout>
+   <com.google.android.material.textfield.TextInputLayout
+       android:id="@+id/edit_02"
+       style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+       android:layout_width="185dp"
+       android:layout_toRightOf="@+id/height_layout"
+       android:layout_marginLeft="10dp"
+       android:layout_height="wrap_content"
+       android:layout_marginTop="20dp"
+       android:gravity="center"
+       app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.MyApp.TextInputLayout.Rounded">
+
+      <com.google.android.material.textfield.TextInputEditText
+          android:id="@+id/edit_2"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+
+          android:layout_margin="5dp"
+          android:hint="Height in cm"
+          android:inputType="numberDecimal"
+          android:textStyle="bold"
+          android:maxLines="1" />
+   </com.google.android.material.textfield.TextInputLayout>
+
+
+
+   <com.google.android.material.textfield.TextInputLayout
+       android:id="@+id/textview_04"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:layout_below="@id/edit_02"
+
+
+       android:layout_marginLeft="10dp"
+
+       android:layout_marginRight="10dp"
+       android:layout_marginTop="20dp"
+       android:gravity="center"
+       app:boxBackgroundMode="none"
+       app:boxStrokeWidth="0dp"
+       app:boxStrokeWidthFocused="0dp"
+       app:boxStrokeColor="@android:color/transparent">
+
+      <com.google.android.material.textview.MaterialTextView
+          android:id="@+id/textview_05"
+          android:layout_width="match_parent"
+          android:layout_height="100dp"
+          android:background="@drawable/background"
+
+
+          android:gravity="center"
+          android:textSize="20dp"
+          android:textColor="@color/purple_200"
+
+          android:textStyle="bold"/>
+   </com.google.android.material.textfield.TextInputLayout>
+
+
+   <com.google.android.material.button.MaterialButton
+       android:id="@+id/btn_1"
+       android:layout_width="match_parent"
+       android:layout_height="60dp"
+       android:layout_below="@id/textview_04"
+       android:layout_marginStart="50dp"
+       android:layout_marginTop="30dp"
+
+       android:layout_marginEnd="50dp"
+       android:layout_marginBottom="30dp"
+       android:backgroundTint="@color/purple_200"
+       android:gravity="center"
        android:text="Calculate BMI"
-       android:textColor="@color/black"
-
-       android:textStyle="bold"/>
-
-
-   <TextView
-       android:id="@+id/textview_1"
-       android:layout_width="match_parent"
-       android:layout_height="50dp"
-       android:layout_marginTop="20dp"
-       android:hint="BMI VALUE"
-       android:paddingLeft="20dp"
-       android:paddingTop="10dp"
-       android:background="@drawable/edit_round"
-       android:layout_marginLeft="20dp"
-       android:layout_marginRight="20dp"
+       android:textColor="@color/teal_200"
        android:textStyle="bold"
-       android:textColor="@color/black"
-       android:backgroundTint="@color/purple_200"
+       app:cornerRadius="40dp">
 
-       android:layout_below="@id/btn_1"
-
-       >
-   </TextView>
-   <TextView
-       android:id="@+id/text_2"
-       android:layout_width="match_parent"
-       android:textStyle="bold"
-       android:hint="Status"
-       android:background="@drawable/edit_round"
-       android:paddingLeft="20dp"
-       android:paddingTop="10dp"
-       android:layout_height="50dp"
-       android:layout_below="@id/textview_1"
-       android:layout_marginLeft="20dp"
-       android:backgroundTint="@color/purple_200"
-       android:layout_marginTop="20dp"
-       android:textColor="@color/black"
-       android:layout_marginRight="20dp"
-
-       ></TextView>
-
+   </com.google.android.material.button.MaterialButton>
 
 
 </RelativeLayout>

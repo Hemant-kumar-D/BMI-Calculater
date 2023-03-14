@@ -3,10 +3,8 @@
     <string name="under_weight">You are underweight</string>
     <string name="over_weight">You are overweight</string>
     <string name="fit_1">You are fit</string>
-
-
-
-
+    <string name="enter_weight_in_kg">Enter Weight(In-Kg)</string>
+    <string name="enter_hight_in_cm">Enter Hight(In-cm)</string>
 
 
 

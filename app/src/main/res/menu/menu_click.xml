@@ -2,15 +2,39 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 <item
     android:id="@+id/Ab_bmi"
-    android:title="About Bmi"
+    android:title="About Developer"
     />
     <item
         android:id="@+id/bmi_chart"
         android:title="BMI Chart"
         />
     <item
+        android:id="@+id/what_bmi"
+        android:title="what is BMI"></item>
+    <item
+        android:id="@+id/Contect_us"
+        android:title="Contect Us ->">
+        <menu>
+            <item
+                android:id="@+id/dial"
+                android:title="Dail phone Number"
+               />
+            <item
+                android:id="@+id/call_menu"
+                android:title="Call"
+                />
+            <item
+                android:id="@+id/email_menu"
+                android:title="Send Email"></item>
+
+        </menu>
+
+    </item>
+
+    <item
         android:id="@+id/bmi_exit"
         android:title="Exit"
         />
+
 
 </menu>
