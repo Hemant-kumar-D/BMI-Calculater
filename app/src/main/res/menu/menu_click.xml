@@ -31,10 +31,7 @@
 
     </item>
 
-    <item
-        android:id="@+id/bmi_exit"
-        android:title="Exit"
-        />
+
 
 
 </menu>

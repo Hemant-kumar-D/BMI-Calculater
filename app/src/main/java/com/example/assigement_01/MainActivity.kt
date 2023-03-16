@@ -1,22 +1,23 @@
 package com.example.assigement_01
 
 
+//import android.view.View.OnClickListener
+
+import android.content.DialogInterface
 import android.content.Intent
 import android.content.pm.PackageManager.PERMISSION_GRANTED
 import android.net.Uri
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
+import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
-//import android.view.View.OnClickListener
 import kotlinx.android.synthetic.main.activity_main.*
-
+import kotlinx.android.synthetic.main.web_view.*
 import kotlin.math.roundToInt
-
-
 
 
 class MainActivity : AppCompatActivity() {
@@ -120,14 +121,14 @@ class MainActivity : AppCompatActivity() {
                 return true
 
             }
-            R.id.bmi_exit -> {
-                finish()
-                System.exit(0)
-
-                Toast.makeText(this,"Exit BMI Appliction",Toast.LENGTH_LONG).show()
-                return true
-
-            }
+//            R.id.bmi_exit -> {
+//                finish()
+//                System.exit(0)
+//
+//                Toast.makeText(this,"Exit BMI Appliction",Toast.LENGTH_LONG).show()
+//                return true
+//
+//            }
             R.id.call_menu  ->{
                 if (ContextCompat.checkSelfPermission(this, android.Manifest.permission.CALL_PHONE) == PERMISSION_GRANTED) {
                     val intent = Intent(Intent.ACTION_CALL)
@@ -143,8 +144,8 @@ class MainActivity : AppCompatActivity() {
                 startActivity(intent)
             }
             R.id.what_bmi ->{
-                val intent=Intent(Intent.ACTION_VIEW,Uri.parse("https://www.youtube.com/watch?v=X8G1YkurALI"))
-                startActivity(intent)
+                val intent=Intent(this,web_view::class.java)
+
             }
             R.id.email_menu ->{
                 val intent=Intent(Intent.ACTION_SENDTO).apply {
@@ -162,9 +163,33 @@ class MainActivity : AppCompatActivity() {
     }
 
 
+    //    override fun onBackPressed() {
+//        val builder:AlertDialog.Builder = AlertDialog.Builder(this)
+//        builder.setCancelable(false)
+//        builder.setMessage("Do you want to Exit?")
+//        builder.setPositiveButton("Yes", DialogInterface.OnClickListener { dialog, which -> //if user pressed "yes", then he is allowed to exit from application
+//                finish()
+//            })
+//        builder.setNegativeButton("No", DialogInterface.OnClickListener { dialog, which -> //if user select "No", just cancel this dialog and continue with app
+//                dialog.cancel()
+//            })
+//        val alert: AlertDialog = builder.create()
+//        alert.show()
+//    }
     override fun onBackPressed() {
-       Toast.makeText(this,"Please go to option menu and press tha exit option",Toast.LENGTH_LONG).show()
+       val builder:AlertDialog.Builder=AlertDialog.Builder(this).apply {
+           setCancelable(false)
+           setMessage("Do you want to exit?")
+           setPositiveButton("Yes",DialogInterface.OnClickListener { dialog, i ->
+               finish()
+           })
+           setNegativeButton("No",DialogInterface.OnClickListener { dialogInterface, i ->dialogInterface.cancel()  })
+           val alert:AlertDialog=create()
+           alert.show()
+
+       }
     }
+
 }
 
 
