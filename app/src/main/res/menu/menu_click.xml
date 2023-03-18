@@ -26,10 +26,17 @@
             <item
                 android:id="@+id/email_menu"
                 android:title="Send Email"></item>
+            <item
+                android:id="@+id/ratewar"
+                android:title="Rate Us->">
+
+            </item>
 
         </menu>
 
+
     </item>
+
 
 
 

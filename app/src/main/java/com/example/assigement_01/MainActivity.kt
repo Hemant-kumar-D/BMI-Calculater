@@ -16,7 +16,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import kotlinx.android.synthetic.main.activity_main.*
-import kotlinx.android.synthetic.main.web_view.*
+
 import kotlin.math.roundToInt
 
 
@@ -110,13 +110,18 @@ class MainActivity : AppCompatActivity() {
             R.id.Ab_bmi -> {
                 val inten=Intent(this,BMIChart::class.java)
                 startActivity(inten)
+
                 return true
 
 
             }
+            R.id.ratewar ->{
+                val intent=Intent(this,rate_us::class.java)
+                startActivity(intent)
+            }
             R.id.bmi_chart -> {
 
-                val intent = Intent(this, MainActivity2::class.java)
+                val intent = Intent(this,BMIChart::class.java)
                 startActivity(intent)
                 return true
 
@@ -144,7 +149,8 @@ class MainActivity : AppCompatActivity() {
                 startActivity(intent)
             }
             R.id.what_bmi ->{
-                val intent=Intent(this,web_view::class.java)
+                val intent=Intent(this,WebviewActivity::class.java)
+                startActivity(intent)
 
             }
             R.id.email_menu ->{
